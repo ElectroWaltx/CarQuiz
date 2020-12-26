@@ -11,7 +11,7 @@ def entertostart():
     print("Hello! Welcome to CarQuiz.")
     print("Please press enter to start")
     if input("") == '':
-        None
+        print("Loading...")
     else: 
         exit(0)
 
