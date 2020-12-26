@@ -3,6 +3,7 @@ import random
 from PIL import Image
 import requests
 from io import BytesIO
+from tqdm.auto import tqdm
 switch = True
 for i in range(0,100):
     print("")
@@ -25,6 +26,8 @@ def picdisplay():
     img8 = Image.open(BytesIO(requests.get("https://trabalhos.esmad.ipp.pt/tsiw/18-19/nes/wp_group06/wp-content/uploads/2019/01/Lamborghini-Aventador.jpg").content))
     img9 = Image.open(BytesIO(requests.get("https://www.motortrend.com/uploads/sites/5/2017/07/2018-Maserati-GranTurismo-coupe-front-three-quarters.jpg").content))
     img10 = Image.open(BytesIO(requests.get("https://www.bentleymedia.com/_assets/85abbd41-8ada-4e36-b08c-28fb49b04d5d.jpg").content))
+    for i in tqdm(range(10000)):
+        print(" ", end='\r')
     img_list = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10]
     global pos 
     pos = random.randint(0,6)
